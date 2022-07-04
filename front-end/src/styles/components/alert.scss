@@ -1,0 +1,74 @@
+@use '../variables';
+
+.alert {
+  z-index: 1000;
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  margin: auto;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.5s;
+  box-shadow:  0 0 10px 5px rgba(0, 0, 0, 0.15);
+  text-align: center;
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.warning {
+    background-color: variables.$warning;
+    color: black;
+    & > .alert-icon {
+      content: url(../../../public/icons/warning.svg);
+    }
+  }
+
+  &.success {
+    background-color: variables.$success;
+    color: #efefef;
+    & > .alert-icon {
+      content: url(../../../public/icons/ok.svg);
+    }
+  }
+
+  &.error {
+    background-color: variables.$error;
+    color: #efefef;
+    & > .alert-icon {
+      content: url(../../../public/icons/error.svg);
+    }
+  }
+
+  &.info {
+    background-color: variables.$info;
+    color: #efefef;
+    & > .alert-icon {
+      content: url(../../../public/icons/info.svg);
+    }
+  }
+}
+
+.alert-icon {
+  margin-right: 20px;
+  height: 25px;
+  width: 25px;
+}
+
+@media screen and (max-width: variables.$sm) {
+  .alert {
+    flex-direction: column;
+  }
+
+  .alert-icon {
+    margin: 0
+  }
+}

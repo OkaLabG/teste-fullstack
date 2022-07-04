@@ -1,45 +1,27 @@
-# Teste para candidatos à vaga de desenvolvedor Fullstack
 
-### Instruções
+# Teste Fullstack ImobPower
 
-1. Desenvolver um processo de autenticação completo, contendo criação de usuários e autenticação do usuário criado;
+## Back-end
+A API foi desenvolvida utilizando Express. Ela será criada com o docker-compose junto com o banco de dados.
 
-2. No Front queremos avaliar o seu nível de conhecimento em design responsivo (Responsive Web Design) usando HTML5 e CSS3. Caso queira, utilize pré-processadores (Less, Stylus ou SASS, esse último é o que mais usamos :D);
+O banco de dados foi criado através do Docker. Dentro do diretório `src/database` no código fonte da API existe um arquivo .sql que possui os scripts utilizados na criação do banco.
 
-3. No Front queremos ver você fazendo os breakpoints e as modificações dependendo do device;
+Para executar o docker-compose, abra o terminal e vá até o diretório raiz do código fonte da API. Execute:
 
-4. No Back é essencial utilizar o JWT para autnticar os usuários; 
+`docker compose up`
 
-5. Não tenha pressa! Iremos avaliar a qualidade do seu código, mesmo incompleto e principalmente a sua semântica;
+Se tudo ocorrer corretamente, dois containers deverão ser criados (postgres e API).
 
-### O que esperamos:
+Obs: a API utiliza a porta 8080 e o postgres a porta 5432.
 
-1. Utilizar React;
+## Front-End
 
-2. Utilizar Node no Back; 
+O Front-End foi desenvolvido com TypeScript, SASS e React Router. Todos os componentes foram criados do zero.
 
-3. Utilizar ECMAScript 6+;
- 
-4. Criar um passo a passo de como rodar sua aplicação;
+Para executar este projeto em modo de desenvolvimento:
+`npm start`
 
-5. Utilizar PostgreSQL de banco de dados;
-
-### Plus:
-
-1. A página ser responsiva;
-
-2. Uso de pré-processador css;
-
-3. Utilizar TypeScript;
-
-5. Utilização de Docker;
-
-### Atenção
-
-* É permitido usar qualquer editor de código e consultar a internet.
-
-Ao terminar o teste, solicite um pull request. 
-
-Em caso de dúvidas, envie e-mail para reinaldo@imobpower.com.
-
-**Boa sorte!**
+Para executar este projeto em modo de produção:
+`npm run build` 
+`npm install -g serve` (caso ainda não tenha o package serve)
+`serve -s build`
