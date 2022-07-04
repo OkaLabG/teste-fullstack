@@ -1,0 +1,20 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  background: url(../../../public/layered-background.svg);
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+
+  & .card > * {
+    margin: 20px 5px;
+  }
+
+  & .card h1 {
+    margin-bottom: 50px;
+  }
+}
